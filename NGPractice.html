@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<<html ng-app>
+<html ng-app="myApp">
 <head>
 	<title>NG</title>
 	<link rel="stylesheet" type="text/css" href="NGPractice.css">
 
 </head>
-<body>
+<body ng-controller="MainController">
 
-  <h1>Hello World</h1>
-  <input type="text" placeholder="stuff" ng-model="stuff">
-  <h1>stuff</h1> 
+	<div>
+      <form ng-submit='addUser()'>
+		<input type='text' placeholder='name' ng-model='newUser.name'>
+		<input type='email' placeholder='email' ng-model='newUser.email'>
+		<input type='password' placeholder='password' ng-model='newUser.password'>
+		<button>Submit User</button>
+      </form>
+	</div>
+  
+    <div ng-repeat='user in users'>
+      {{user}}  
+    </div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular.min.js"></script>
-<script src="NGPractice.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.12/angular.min.js"></script>
 <script src="app.js"></script>
+<script src="NGPractice.js"></script>
 
 </body>
 </html>
