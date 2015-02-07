@@ -8,4 +8,8 @@ app.controller('MainController', function($scope){
     $scope.newUser = {};
   }
   
+  $scope.deleteUser = function(index){
+    $scope.users.splice(index, 1);
+  }
+  
 });
